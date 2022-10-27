@@ -63,18 +63,26 @@
             <!-- Main Section -->
             <section id="main-section">
                 <div class="container">
-                    <ul class="main-ul">
+                    <span v-if="!toDoList.length" class="placeholder">Aggiungi le tue cose da fare &#128513;</span>
+                    <ul v-else class="main-ul">
                         <!-- Li repeated -->
                         <li v-for="(element, index) in toDoList" 
                             :class="{'done' : element.isDone}"
                             @click="checkAsDone(element)"
                             class="list-item"
                             >
-                            <input type="checkbox" v-model="element.isDone">
-                            {{ element.toDo }}
+                            <!-- Checkmark and li text -->
+                            <div class="to-do">
+                                <input type="checkbox" v-model="element.isDone" class="checkmark">
+                                {{ element.toDo }}
+                            </div>
+                            <!-- /Checkmark and li text -->
+
+                            <!-- Trash icon -->
                             <span @click="deleteListItem(index)" class="delete">
                                 <i class="fa-solid fa-trash"></i>
                             </span>
+                            <!-- /Trash icon -->
                         </li>
                         <!-- /Li repeated -->
                     </ul>
