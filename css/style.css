@@ -118,6 +118,7 @@ label{
 }
 
 .error{
+    display: block;
     color: red;
     font-size: .8rem;
     margin-top: .7rem;
