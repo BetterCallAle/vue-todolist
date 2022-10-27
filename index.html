@@ -13,14 +13,30 @@
 <body>
     
     <div id="app">
-        <div class="container">
-            <ul>
-                <li v-for="(element, index) in toDoList" :class="{'done' : element.isDone}">
-                    {{ element.toDo }}
-                    <span @click="deleteListItem(index)" class="delete">&cross;</span>
-                </li>
-            </ul>
-        </div>
+        <!-- Input Section -->
+        <section id="input-section">
+            <div class="container">
+                <label for="user-to-do">Scrivi qui le tue cose da fare</label>
+                <input type="text" id="user-to-do" v-model.trim="userToDo" @keyup.enter="addStringToList">
+                <button @click="addStringToList">Inserisci</button>
+            </div>
+        </section>
+
+        <!-- Main Section -->
+        <section id="main-section">
+            <div class="container">
+                <ul>
+                    <li 
+                    v-for="(element, index) in toDoList" 
+                    :class="{'done' : element.isDone}"
+                    @click="checkAsDone"
+                    >
+                        {{ element.toDo }}
+                        <span @click="deleteListItem(index)" class="delete">&cross;</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <!-- Link Js -->

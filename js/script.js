@@ -16,12 +16,25 @@ createApp({
             {
                 toDo: "Comprare il caffè",
                 isDone: false
-            }]
+            }],
+
+            userToDo: ""
 
         }
     },
 
     methods:{
+
+        /* Function for add the input value in the toDoList array */
+        addStringToList(){
+            this.toDoList.push({
+                toDo: this.userToDo,
+                isDone: false
+            });
+            this.userToDo = ""
+        },
+
+        /* Function check the done elements */
         deleteListItem(arrayIndex){
             this.toDoList.splice(arrayIndex, 1)
         }
