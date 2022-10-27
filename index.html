@@ -15,7 +15,10 @@
     <div id="app">
         <div class="container">
             <ul>
-                <li v-for="element in toDoList" :class="{'done' : element.isDone}">{{ element.toDo }}</li>
+                <li v-for="(element, index) in toDoList" :class="{'done' : element.isDone}">
+                    {{ element.toDo }}
+                    <span @click="deleteListItem(index)" class="delete">&cross;</span>
+                </li>
             </ul>
         </div>
     </div>
