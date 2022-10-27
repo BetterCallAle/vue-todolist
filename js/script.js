@@ -17,9 +17,8 @@ createApp({
                 toDo: "Comprare il caffè",
                 isDone: false
             }],
-
-            userToDo: ""
-
+            userToDo: "",
+            isNotLongEnough: false,
         }
     },
 
@@ -27,11 +26,21 @@ createApp({
 
         /* Function for add the input value in the toDoList array */
         addStringToList(){
+           if(this.userToDo.length < 5){
+
+                this.isNotLongEnough = true;
+
+           } else{
+
             this.toDoList.push({
                 toDo: this.userToDo,
                 isDone: false
             });
+
             this.userToDo = ""
+
+            this.isNotLongEnough = false
+           }
         },
 
         /* Function to delete list elements */
