@@ -29,7 +29,7 @@
                     <li 
                     v-for="(element, index) in toDoList" 
                     :class="{'done' : element.isDone}"
-                    @click="checkAsDone"
+                    @click="checkAsDone(element)"
                     >
                         {{ element.toDo }}
                         <span @click="deleteListItem(index)" class="delete">&cross;</span>

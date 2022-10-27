@@ -34,9 +34,14 @@ createApp({
             this.userToDo = ""
         },
 
-        /* Function check the done elements */
+        /* Function to delete list elements */
         deleteListItem(arrayIndex){
             this.toDoList.splice(arrayIndex, 1)
+        },
+
+        /* Function to check as done the list items */
+        checkAsDone(thisElement){
+            thisElement.isDone ? thisElement.isDone = false : thisElement.isDone = true
         }
     }
 
