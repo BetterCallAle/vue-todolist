@@ -67,14 +67,12 @@
                     <ul v-else class="main-ul">
                         <!-- Li repeated -->
                         <li v-for="(element, index) in toDoList" 
-                            :class="{'done' : element.isDone}"
-                            @click="checkAsDone(element)"
                             class="list-item"
-                            >
+                        >
                             <!-- Checkmark and li text -->
-                            <div class="to-do">
-                                <input type="checkbox" v-model="element.isDone" class="checkmark">
-                                {{ element.toDo }}
+                            <div class="to-do" @click="checkAsDone(element)" :class="{'done' : element.isDone}">
+                                <input type="checkbox" v-model="element.isDone" class="checkmark" :for="index">
+                                <label :for="index"  class="list-label">{{ element.toDo }}</label>
                             </div>
                             <!-- /Checkmark and li text -->
 

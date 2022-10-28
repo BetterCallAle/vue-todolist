@@ -142,7 +142,6 @@ label{
     display: flex;
     justify-content: space-between;
     margin-bottom: .8rem;
-    cursor: pointer;
 }
 
 .checkmark{
@@ -159,6 +158,7 @@ label{
     text-align: center;
     line-height: 20px;
     border: 1px solid green;
+    cursor: pointer;
 }
 
 .checkmark:checked::after{
@@ -169,6 +169,7 @@ label{
 
 .delete{
     cursor: pointer;
+    vertical-align: baseline;
 }
 
 .done{
@@ -183,7 +184,20 @@ label{
     background-color: black;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     transform: translateY(-50%);
+}
+
+.to-do{
+    flex-grow: 1;
+    text-align: left;
+    cursor: pointer;
+}
+
+.list-label{
+    display: inline-block !important;
+    cursor: pointer;
+    vertical-align: text-top;
+    margin-left: 1rem;
 }
