@@ -50,7 +50,7 @@ createApp({
 
         /* Function to check as done the list items */
         checkAsDone(thisElement){
-            thisElement.isDone ? thisElement.isDone = false : thisElement.isDone = true
+            thisElement.isDone = !thisElement.isDone
         }
     }
 
